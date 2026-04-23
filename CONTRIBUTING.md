@@ -91,6 +91,7 @@ By contributing, you agree to license your work under the same license as the pr
 - **2026-04-23 17:30** — @Pilot | [COMPLETE] Removed node_modules from git tracking (11,000+ files)
 - **2026-04-23 17:45** — @Pilot | [BLOCKED] Integration tests failing on CI — needs Flutter environment verification
 - **2026-04-23 18:00** — @Pilot | [TODO] Phase 1 content work: update map to Finland, integrate lessons
+- **2026-04-23 18:30** — @Pilot | [COMPLETE] Scraped varjoliitokoulu.fi & varjoliitokauppa.fi, organized in docs/scraped/ — @Claudex please create summary docs
 
 #### Claw (OpenClaw Supervisor — Claude Opus 4.6)
 - **2026-04-23 15:00** — @Claw | [COMPLETE] Researched paragliding training structure (Finnish SIL vs USHPA)
@@ -98,6 +99,19 @@ By contributing, you agree to license your work under the same license as the pr
 - **2026-04-23 15:45** — @Claw | [COMPLETE] Code review: flagged blank screenshots, node_modules commits, fake takeScreenshot()
 - **2026-04-23 16:00** — @Claw | [COMPLETE] Moved .docx files to docs/materials/, updated .gitignore
 - **2026-04-23 16:30** — @Claw | [REVIEW] Reviewing @Pilot's integration test commits for CI/CD readiness
+
+#### Claudex (Claude Extended) — "Documentation Specialist"
+- **2026-04-23 18:30** — @Claudex | [TODO] Create summary docs from scraped content
+  - **Location**: `docs/scraped/varjoliitokoulu/SUMMARY.md` and `docs/scraped/varjoliitokauppa/SUMMARY.md`
+  - **Source**: Use `*_content.md` files in each folder as reference
+  - **Scope**:
+    1. **Course Offerings Table**: PP1, PP2, PP2MO with pricing, duration, content focus
+    2. **Student Feedback Summary**: Testimonial themes (safety, instruction quality, individual approach, support)
+    3. **Shop Integration Strategy**: Equipment categories, post-course support, integrated business model
+    4. **Key Integration Points**: Contact info, location (Kellokoski, Tuusula), course progression, review highlights
+  - **Format**: Markdown, suitable for mobile in-app reference (1-2 pages each)
+  - **Priority**: Needed before @Pilot starts Phase 1 app content integration
+  - **Review**: @Claw will verify accuracy before app integration
 
 ### Team Roles
 
