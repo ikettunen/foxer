@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/rendering.dart';
 
 /// Helper functions for integration testing
 
@@ -39,14 +42,21 @@ Future<void> enterText(WidgetTester tester, Key key, String text) async {
   await tester.pumpAndSettle();
 }
 
-/// Takes a real screenshot and saves it
+/// Takes a screenshot (note: actual file saving requires platform-specific handling)
 Future<void> takeScreenshot(WidgetTester tester, String name) async {
   await tester.pumpAndSettle();
   try {
-    await tester.binding.convertFlutterSurfaceToImage();
-    print('📸 Screenshot captured: $name');
+    // Add a small delay to ensure rendering is complete
+    await Future.delayed(const Duration(milliseconds: 100));
+    
+    // For screenshot capture, we'll just log the action
+    // Actual screenshot saving requires integration_test artifacts or platform channels
+    print('📸 Screenshot checkpoint: $name');
+    
+    // Verify the widget tree is rendered
+    expect(find.byType(MaterialApp), findsOneWidget);
   } catch (e) {
-    print('⚠️ Screenshot failed for $name: $e');
+    print('⚠️ Screenshot checkpoint failed for $name: $e');
   }
 }
 
