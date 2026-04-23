@@ -20,7 +20,7 @@ class LessonsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            Image.asset('logo.webp', height: 32),
+            const Icon(Icons.paragliding, size: 32, color: Colors.white),
             const SizedBox(width: 12),
             const Text('Lessons'),
           ],

@@ -39,10 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'logo.webp',
-                  width: 120,
-                  height: 120,
+                const Icon(
+                  Icons.paragliding,
+                  color: Colors.black,
+                  size: 100,
                 ),
                 const SizedBox(height: 20),
                 const Text(
