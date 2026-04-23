@@ -28,8 +28,7 @@ echo.
 REM Run tests with verbose output
 call flutter test integration_test/app_test.dart ^
     --no-pub ^
-    --verbose ^
-    --platform=chrome
+    --verbose
 
 echo.
 echo ✅ Test run completed!

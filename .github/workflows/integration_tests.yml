@@ -26,8 +26,7 @@ jobs:
     - name: Run integration tests with screenshots
       run: |
         flutter test integration_test/app_test.dart \
-          -v \
-          --platform=chrome
+          -v
       timeout-minutes: 30
 
     - name: Create screenshots directory

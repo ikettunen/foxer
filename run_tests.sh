@@ -27,10 +27,7 @@ echo ""
 # Run tests with verbose output on Chrome
 flutter test integration_test/app_test.dart \
     --no-pub \
-    --verbose \
-    --platform=chrome
-
-echo ""
+  --verbose
 echo "✅ Test run completed!"
 echo ""
 echo "📸 Screenshots captured - check console output for timing"
