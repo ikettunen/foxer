@@ -5,21 +5,20 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Foxer Paragliding Training App">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Foxer Paragliding">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <title>Foxer Paragliding</title>
   <link rel="manifest" href="manifest.json">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANeXz8Z_1ukadMZfTYfhfKVPzuAWF6TzA"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANeXz8Z_1ukadMZfTYfhfKVPzuAWF6TzA"></script>
 </head>
 <body>
   <script>
+    var serviceWorkerVersion = null;
     window.addEventListener('load', function(ev) {
       _flutter.loader.load({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
+        serviceWorkerVersion: serviceWorkerVersion,
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
