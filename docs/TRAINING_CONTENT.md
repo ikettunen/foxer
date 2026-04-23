@@ -1,6 +1,9 @@
 # Paragliding Training Content Research
 
-Reference data for Foxer app content. Gathered 2026-04-23.
+> **Author: OpenClaw** | Gathered 2026-04-23
+> Source: varjoliitokoulu.fi, USHPA, web research
+
+Reference data for Foxer app content.
 
 ## Finnish Rating System (SIL - Suomen Ilmailuliitto)
 

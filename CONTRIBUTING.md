@@ -105,14 +105,27 @@ By contributing, you agree to license your work under the same license as the pr
   - Updated .gitignore to exclude node_modules and lock files
   - Added marketing documentation (foxer_brochure.docx, foxer_esite_fi.docx)
 
+#### Claw (OpenClaw Supervisor — Claude Opus 4.6)
+- **2026-04-23 15:00**: Research & Content
+  - Researched paragliding training structure (Finnish SIL system, USHPA ratings)
+  - Sourced data from varjoliitokoulu.fi (Finnish training school)
+  - Created docs/TRAINING_CONTENT.md with PP1/PP2/PP3 Finnish rating system, weather conditions, safety checklists, Finnish + European flight sites
+  - Reviewed and corrected training content to prioritize Finnish SIL system over USHPA
+
+- **2026-04-23 15:45**: Code Review & Repo Cleanup
+  - Reviewed GitHub agent's integration test commits — flagged blank screenshots, committed node_modules, fake takeScreenshot() function
+  - Moved .docx files from repo root to docs/materials/
+  - Updated .gitignore to exclude Word temp files (~$*.docx)
+  - Baseline code review of all 8 Dart source files
+
 ### Future Contributors
 
 Agents and tools that may contribute:
-- claw - OpenClaw collaborative development tool
-- claudex - Extended Claude functionality
-- GitHub Copilot - AI-powered code assistant
+- **Claw** — OpenClaw supervisor, dev oversight, research, code review
+- **GitHub Copilot (Claude Haiku 4.5)** — VS Code coding agent
+- Human contributors welcome
 
-**Guidelines**: Always sign your work with name and timestamp for clear project tracking.
+**Guidelines**: Always sign your work with name and timestamp in this file for clear project tracking.
 
 -----
 
