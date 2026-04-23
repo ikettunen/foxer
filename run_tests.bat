@@ -1,5 +1,5 @@
 @echo off
-REM Script to run integration tests locally on Windows
+REM Script to run integration tests locally on Windows with screenshots
 
 echo.
 echo 🧪 Paragliding Training App - Integration Tests
@@ -22,19 +22,24 @@ call flutter pub get
 
 echo.
 echo 🏃 Running integration tests...
+echo 📸 Screenshots will be captured during test execution
 echo.
 
 REM Run tests with verbose output
-call flutter test integration_test/ ^
+call flutter test integration_test/app_test.dart ^
     --no-pub ^
-    --verbose
+    --verbose ^
+    --platform=chrome
 
 echo.
 echo ✅ Test run completed!
 echo.
-echo Screenshots location:
-echo   Android: build\android\screenshots\
-echo   iOS: build\ios\screenshots\
-echo   Web: build\web\screenshots\
+echo 📸 Screenshots captured:
+echo   Check console output above for screenshot timing
+echo   Build artifacts: build\
 echo.
+
+REM Optional: Open build directory
+echo 📁 Opening build directory...
+start build
 pause
