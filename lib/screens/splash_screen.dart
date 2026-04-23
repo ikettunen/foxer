@@ -14,40 +14,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _checkLoginStatus();
-  }
-
-  Future<void> _checkLoginStatus() async {
-    await Future.delayed(const Duration(seconds: 2));
-    
-    if (mounted) {
-      try {
-        final prefs = await SharedPreferences.getInstance().timeout(
-          const Duration(seconds: 2),
-          onTimeout: () => null as dynamic,
-        );
-        
-        bool isLoggedIn = false;
-        if (prefs != null) {
-          isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-        }
-        
-        if (mounted) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => isLoggedIn ? const HomeScreen() : const LoginScreen(),
-            ),
-          );
-        }
-      } catch (e) {
-        // If SharedPreferences fails, just go to login
+    // Skip SharedPreferences on web - go straight to login
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(seconds: 2), () {
         if (mounted) {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const LoginScreen()),
           );
         }
-      }
-    }
+      });
+    });
   }
 
   @override
