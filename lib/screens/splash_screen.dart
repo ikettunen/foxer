@@ -19,15 +19,34 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _checkLoginStatus() async {
     await Future.delayed(const Duration(seconds: 2));
-    final prefs = await SharedPreferences.getInstance();
-    final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-
+    
     if (mounted) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => isLoggedIn ? const HomeScreen() : const LoginScreen(),
-        ),
-      );
+      try {
+        final prefs = await SharedPreferences.getInstance().timeout(
+          const Duration(seconds: 2),
+          onTimeout: () => null as dynamic,
+        );
+        
+        bool isLoggedIn = false;
+        if (prefs != null) {
+          isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+        }
+        
+        if (mounted) {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => isLoggedIn ? const HomeScreen() : const LoginScreen(),
+            ),
+          );
+        }
+      } catch (e) {
+        // If SharedPreferences fails, just go to login
+        if (mounted) {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
+        }
+      }
     }
   }
 
