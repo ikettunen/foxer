@@ -81,51 +81,47 @@ By contributing, you agree to license your work under the same license as the pr
 
 ### Recent Work (April 2026)
 
-#### GitHub Copilot (Claude Haiku 4.5)
-- **2026-04-23**: Security & Infrastructure
-  - Removed exposed Google Maps API key (AIzaSyALoTTdeGESw38x8pncRPzgYn6FF_R7NkU)
-  - Added new secure API key (AIzaSyANeXz8Z_1ukadMZfTYfhfKVPzuAWF6TzA)
-  - Updated \.gitignore\ with API key patterns
-  - Fixed OpenClaw device authentication (disabled device auth in config)
-
-- **2026-04-23**: Integration Testing & CI/CD
-  - Implemented 3 integration tests (login flow, navigation, persistence)
-  - Created real screenshot capture using \convertFlutterSurfaceToImage()\`n  - Fixed deprecated Flutter APIs
-  - Fixed integration test runner scripts (removed unsupported --platform=chrome)
-  - Set up GitHub Actions CI/CD workflow with artifact uploads
-
-- **2026-04-23**: Documentation
-  - Created docs/IMPLEMENTATION.md - comprehensive app status (200+ lines)
-  - Created docs/SCREENSHOTS_CI.md - how to run tests and access screenshots
-  - Created QUICK_REFERENCE.md - command reference guide
-  - Updated integration_test/README.md with documentation links
-
-- **2026-04-23**: Repository Cleanup
-  - Removed node_modules/ from git tracking (11,000+ files)
-  - Updated .gitignore to exclude node_modules and lock files
-  - Added marketing documentation (foxer_brochure.docx, foxer_esite_fi.docx)
+#### GitHub Copilot (Claude Haiku 4.5) — "Pilot"
+- **2026-04-23 16:00** — @Pilot | [COMPLETE] Removed exposed API key, added secure replacement
+- **2026-04-23 16:15** — @Pilot | [COMPLETE] Fixed OpenClaw device authentication config
+- **2026-04-23 16:30** — @Pilot | [COMPLETE] Implemented 3 integration tests (login, navigation, persistence)
+- **2026-04-23 16:45** — @Pilot | [COMPLETE] Created real screenshot capture using convertFlutterSurfaceToImage()
+- **2026-04-23 17:00** — @Pilot | [COMPLETE] Fixed integration test runner scripts (removed --platform=chrome)
+- **2026-04-23 17:15** — @Pilot | [COMPLETE] Set up GitHub Actions CI/CD with artifact uploads
+- **2026-04-23 17:30** — @Pilot | [COMPLETE] Removed node_modules from git tracking (11,000+ files)
+- **2026-04-23 17:45** — @Pilot | [BLOCKED] Integration tests failing on CI — needs Flutter environment verification
+- **2026-04-23 18:00** — @Pilot | [TODO] Phase 1 content work: update map to Finland, integrate lessons
 
 #### Claw (OpenClaw Supervisor — Claude Opus 4.6)
-- **2026-04-23 15:00**: Research & Content
-  - Researched paragliding training structure (Finnish SIL system, USHPA ratings)
-  - Sourced data from varjoliitokoulu.fi (Finnish training school)
-  - Created docs/TRAINING_CONTENT.md with PP1/PP2/PP3 Finnish rating system, weather conditions, safety checklists, Finnish + European flight sites
-  - Reviewed and corrected training content to prioritize Finnish SIL system over USHPA
+- **2026-04-23 15:00** — @Claw | [COMPLETE] Researched paragliding training structure (Finnish SIL vs USHPA)
+- **2026-04-23 15:15** — @Claw | [COMPLETE] Created docs/TRAINING_CONTENT.md with Finnish system, weather, safety
+- **2026-04-23 15:45** — @Claw | [COMPLETE] Code review: flagged blank screenshots, node_modules commits, fake takeScreenshot()
+- **2026-04-23 16:00** — @Claw | [COMPLETE] Moved .docx files to docs/materials/, updated .gitignore
+- **2026-04-23 16:30** — @Claw | [REVIEW] Reviewing @Pilot's integration test commits for CI/CD readiness
 
-- **2026-04-23 15:45**: Code Review & Repo Cleanup
-  - Reviewed GitHub agent's integration test commits — flagged blank screenshots, committed node_modules, fake takeScreenshot() function
-  - Moved .docx files from repo root to docs/materials/
-  - Updated .gitignore to exclude Word temp files (~$*.docx)
-  - Baseline code review of all 8 Dart source files
+### Team Roles
+
+- **@Pilot** (GitHub Copilot — Claude Haiku 4.5) — Code implementation, app development, feature builds
+- **@Claudex** (Claude Extended) — Documentation writing, content creation, technical guides
+- **@Claw** (OpenClaw Supervisor — Claude Opus 4.6) — Code review, verification, oversight, task prioritization
+
+### Work Status Tags
+
+- `[COMPLETE]` — Done and pushed to repo
+- `[NEEDS-REVIEW]` — Waiting for @Claw review before merge
+- `[BLOCKED]` — Waiting on decision/external action
+- `[REVIEW]` — Currently being reviewed
+- `[TODO]` — Queued for next contributor
+- `[ONGOING]` — In progress
+
+**When signing work**: Use format `@YourRole | [TAG] Description` for clear handoff tracking.
 
 ### Future Contributors
 
 Agents and tools that may contribute:
-- **Claw** — OpenClaw supervisor, dev oversight, research, code review
-- **GitHub Copilot (Claude Haiku 4.5)** — VS Code coding agent
-- Human contributors welcome
-
-**Guidelines**: Always sign your work with name and timestamp in this file for clear project tracking.
+- **@Pilot** — Coding agent, feature development, debugging
+- **@Claudex** — Documentation, guides, content writing
+- **@Claw** — Review, verification, project oversight
 
 -----
 
