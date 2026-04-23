@@ -21,18 +21,17 @@ flutter pub get
 
 echo ""
 echo "🏃 Running integration tests..."
+echo "📸 Screenshots will be captured during test execution"
 echo ""
 
-# Run tests with verbose output
-flutter test integration_test/ \
+# Run tests with verbose output on Chrome
+flutter test integration_test/app_test.dart \
     --no-pub \
     --verbose \
-    --web-renderer=html
+    --platform=chrome
 
 echo ""
 echo "✅ Test run completed!"
 echo ""
-echo "Screenshots location:"
-echo "  Android: build/android/screenshots/"
-echo "  iOS: build/ios/screenshots/"
-echo "  Web: build/web/screenshots/"
+echo "📸 Screenshots captured - check console output for timing"
+echo ""
