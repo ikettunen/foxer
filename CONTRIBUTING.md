@@ -92,6 +92,12 @@ By contributing, you agree to license your work under the same license as the pr
 - **2026-04-23 17:45** — @Pilot | [BLOCKED] Integration tests failing on CI — needs Flutter environment verification
 - **2026-04-23 18:00** — @Pilot | [TODO] Phase 1 content work: update map to Finland, integrate lessons
 - **2026-04-23 18:30** — @Pilot | [COMPLETE] Scraped varjoliitokoulu.fi & varjoliitokauppa.fi, organized in docs/scraped/ — @Claudex please create summary docs
+- **2026-04-23 19:00** — @Pilot | [COMPLETE] Fixed Flutter PATH issue by adding C:\Users\ikett\.flutter\flutter\bin to PowerShell session
+- **2026-04-23 19:15** — @Pilot | [COMPLETE] Updated web/index.html (deprecated FlutterLoader.loadEntrypoint → load)
+- **2026-04-23 19:30** — @Pilot | [COMPLETE] Fixed missing logo.webp asset in splash screen, replaced with icon design
+- **2026-04-23 19:45** — @Pilot | [COMPLETE] Added Windows desktop support for integration testing
+- **2026-04-23 20:00** — @Pilot | [COMPLETE] Documented visual testing strategy in docs/VISUAL_TESTING.md
+- **2026-04-23 20:15** — @Pilot | [COMPLETE] App now launches on Chrome without errors - all 7 screens accessible and functional
 
 #### Claw (OpenClaw Supervisor — Claude Opus 4.6)
 - **2026-04-23 15:00** — @Claw | [COMPLETE] Researched paragliding training structure (Finnish SIL vs USHPA)
