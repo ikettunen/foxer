@@ -16,12 +16,17 @@
 <body>
   <script src="flutter.js"></script>
   <script>
-    _flutter.loader.load({
-      onEntrypointLoaded: async function(engineInitializer) {
-        let appRunner = await engineInitializer.initializeEngine();
-        await appRunner.runApp();
-      }
-    });
+    function initFlutter() {
+      _flutter.loader.load({
+        onEntrypointLoaded: async function(engineInitializer) {
+          let appRunner = await engineInitializer.initializeEngine();
+          await appRunner.runApp();
+        }
+      });
+    }
+    
+    // Wait a tick for flutter.js to initialize _flutter global
+    setTimeout(initFlutter, 0);
   </script>
 </body>
 </html>
