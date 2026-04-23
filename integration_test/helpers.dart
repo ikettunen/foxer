@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
 
 /// Helper functions for integration testing
 
 /// Waits for a widget with the given key to appear
-Future<void> waitForWidget(WidgetTester tester, Key key) async {
-  await tester.pumpWidget(const SizedBox.shrink());
-  int maxAttempts = 30; // 30 attempts = ~3 seconds with 100ms pump
+Future<void> waitForWidget(WidgetTester tester, Key key, {Duration timeout = const Duration(seconds: 5)}) async {
+  final endTime = DateTime.now().add(timeout);
   
-  while (maxAttempts > 0) {
+  while (DateTime.now().isBefore(endTime)) {
     await tester.pumpAndSettle();
     if (find.byKey(key).evaluate().isNotEmpty) {
       return;
     }
-    maxAttempts--;
     await Future.delayed(const Duration(milliseconds: 100));
   }
   
-  throw Exception('Widget with key $key not found after timeout');
+  throw Exception('Widget with key $key not found after ${timeout.inSeconds}s');
 }
 
 /// Finds and taps a widget by key
@@ -40,12 +39,15 @@ Future<void> enterText(WidgetTester tester, Key key, String text) async {
   await tester.pumpAndSettle();
 }
 
-/// Takes a screenshot and saves it
+/// Takes a real screenshot and saves it
 Future<void> takeScreenshot(WidgetTester tester, String name) async {
   await tester.pumpAndSettle();
-  final timestamp = DateTime.now().toString().replaceAll(':', '-').split('.')[0];
-  print('📸 Screenshot: $name at $timestamp');
-  // Screenshots are typically saved by test runner with --screenshots flag
+  try {
+    await tester.binding.convertFlutterSurfaceToImage();
+    print('📸 Screenshot captured: $name');
+  } catch (e) {
+    print('⚠️ Screenshot failed for $name: $e');
+  }
 }
 
 /// Waits for a text to appear

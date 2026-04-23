@@ -22,8 +22,8 @@ jobs:
     - name: Get dependencies
       run: flutter pub get
 
-    - name: Run integration tests
-      run: flutter test integration_test/ -v
+    - name: Run integration tests on Chrome
+      run: flutter test integration_test/ -v --platform=chrome
       timeout-minutes: 30
 
     - name: Upload test results
@@ -32,3 +32,4 @@ jobs:
       with:
         name: integration-test-results
         path: build/
+        retention-days: 7
