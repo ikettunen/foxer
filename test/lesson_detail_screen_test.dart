@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:foxer/screens/lesson_detail_screen.dart';
+import 'package:paragliding_training/screens/lesson_detail_screen.dart';
 
 void main() {
   group('LessonDetailScreen Tests', () {
@@ -91,8 +91,8 @@ void main() {
       expect(find.text('Mark as Complete'), findsOneWidget);
       expect(find.byIcon(Icons.play_circle_outline), findsOneWidget);
 
-      // Tap the button
-      await tester.tap(find.byType(ElevatedButton));
+      // Tap the button by finding it by text (ElevatedButton.icon won't be found by type)
+      await tester.tap(find.text('Mark as Complete'));
       await tester.pumpAndSettle();
 
       // Should now show "Completed"
@@ -100,7 +100,7 @@ void main() {
       expect(find.byIcon(Icons.check_circle), findsOneWidget);
 
       // Tap again to toggle back
-      await tester.tap(find.byType(ElevatedButton));
+      await tester.tap(find.text('Completed'));
       await tester.pumpAndSettle();
 
       // Should return to "Mark as Complete"
@@ -120,8 +120,8 @@ void main() {
         ),
       );
 
-      // Tap completion button
-      await tester.tap(find.byType(ElevatedButton));
+      // Tap completion button by text
+      await tester.tap(find.text('Mark as Complete'));
       await tester.pumpAndSettle();
 
       // Check for SnackBar message
@@ -130,8 +130,8 @@ void main() {
       // Wait for SnackBar to disappear
       await tester.pumpAndSettle(const Duration(seconds: 3));
 
-      // Tap again to mark incomplete
-      await tester.tap(find.byType(ElevatedButton));
+      // Tap again to mark incomplete by text
+      await tester.tap(find.text('Completed'));
       await tester.pumpAndSettle();
 
       // Check for incomplete message

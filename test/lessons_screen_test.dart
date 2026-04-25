@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:foxer/screens/lessons_screen.dart';
-import 'package:foxer/screens/lesson_detail_screen.dart';
+import 'package:paragliding_training/screens/lessons_screen.dart';
+import 'package:paragliding_training/screens/lesson_detail_screen.dart';
 
 void main() {
   group('LessonsScreen Tests', () {
@@ -79,6 +79,13 @@ void main() {
       expect(find.byType(CircleAvatar), findsWidgets);
       expect(find.text('1'), findsOneWidget);
       expect(find.text('2'), findsOneWidget);
+      
+      // Avatar "8" is off-screen, scroll down to find it
+      await tester.scrollUntilVisible(
+        find.text('8'),
+        500.0,
+        scrollable: find.byType(ListView).first,
+      );
       expect(find.text('8'), findsOneWidget);
     });
 
@@ -119,8 +126,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Pre-flight Checks'), findsWidgets);
-      expect(find.text('20 min'), findsOneWidget);
-      expect(find.text('Beginner'), findsOneWidget);
+      expect(find.text('Duration: 20 min'), findsOneWidget);
+      expect(find.text('Level: Beginner'), findsOneWidget);
     });
 
     testWidgets('Lessons are displayed in a scrollable ListView',
@@ -133,11 +140,12 @@ void main() {
 
       expect(find.byType(ListView), findsOneWidget);
 
-      // Scroll down to see more lessons
-      await tester.drag(find.byType(ListView), const Offset(0, -300));
-      await tester.pumpAndSettle();
-
-      // All lessons should still be accessible
+      // "Thermal Flying" is off-screen, scroll until visible
+      await tester.scrollUntilVisible(
+        find.text('Thermal Flying'),
+        500.0,
+        scrollable: find.byType(ListView).first,
+      );
       expect(find.text('Thermal Flying'), findsOneWidget);
     });
 
@@ -150,11 +158,11 @@ void main() {
       );
 
       // Find beginner lessons
-      expect(find.text('Beginner'), findsWidgets);
+      expect(find.textContaining('Beginner'), findsWidgets);
       // Find intermediate lessons
-      expect(find.text('Intermediate'), findsWidgets);
+      expect(find.textContaining('Intermediate'), findsWidgets);
       // Find advanced lessons
-      expect(find.text('Advanced'), findsWidgets);
+      expect(find.textContaining('Advanced'), findsWidgets);
     });
 
     testWidgets('AppBar displays "Lessons" title and icon', (WidgetTester tester) async {
