@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:paragliding_training/generated_localizations/app_localizations.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -45,9 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   size: 100,
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  'Foxer Paragliding',
-                  style: TextStyle(
+                Text(
+                  AppLocalizations.of(context)!.appTitle,
+                  style: const TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -56,9 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 40),
                 TextFormField(
                   controller: _emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.email,
+                    border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -71,9 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   controller: _passwordController,
                   obscureText: true,
-                  decoration: const InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.password,
+                    border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -87,9 +88,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: _login,
-                    child: const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text('Login'),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(AppLocalizations.of(context)!.login),
                     ),
                   ),
                 ),

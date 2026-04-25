@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paragliding_training/generated_localizations/app_localizations.dart';
 import 'lesson_detail_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
@@ -20,10 +21,10 @@ class LessonsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: const [
-            Icon(Icons.paragliding, size: 32, color: Colors.white),
-            SizedBox(width: 12),
-            Text('Lessons'),
+          children: [
+            const Icon(Icons.paragliding, size: 32, color: Colors.white),
+            const SizedBox(width: 12),
+            Text(AppLocalizations.of(context)!.lessons),
           ],
         ),
       ),

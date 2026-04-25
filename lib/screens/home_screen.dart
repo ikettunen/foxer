@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paragliding_training/generated_localizations/app_localizations.dart';
 import 'map_screen.dart';
 import 'lessons_screen.dart';
 import 'reading_materials_screen.dart';
@@ -32,22 +33,22 @@ class _HomeScreenState extends State<HomeScreen> {
             _selectedIndex = index;
           });
         },
-        destinations: const [
+        destinations: [
           NavigationDestination(
-            icon: Icon(Icons.map),
-            label: 'Flight Sites',
+            icon: const Icon(Icons.map),
+            label: AppLocalizations.of(context)!.flightSites,
           ),
           NavigationDestination(
-            icon: Icon(Icons.school),
-            label: 'Lessons',
+            icon: const Icon(Icons.school),
+            label: AppLocalizations.of(context)!.lessons,
           ),
           NavigationDestination(
-            icon: Icon(Icons.book),
-            label: 'Reading',
+            icon: const Icon(Icons.book),
+            label: AppLocalizations.of(context)!.readingMaterials,
           ),
           NavigationDestination(
-            icon: Icon(Icons.forum),
-            label: 'Discussions',
+            icon: const Icon(Icons.forum),
+            label: AppLocalizations.of(context)!.discussions,
           ),
         ],
       ),
