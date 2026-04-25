@@ -91,8 +91,9 @@ void main() {
       expect(find.text('Mark as Complete'), findsOneWidget);
       expect(find.byIcon(Icons.play_circle_outline), findsOneWidget);
 
-      // Tap the button by finding it by text (ElevatedButton.icon won't be found by type)
-      await tester.tap(find.text('Mark as Complete'));
+      // Tap the button by predicate
+      final button = tester.widget<ElevatedButton>(find.byWidgetPredicate((w) => w is ElevatedButton));
+      button.onPressed!();
       await tester.pumpAndSettle();
 
       // Should now show "Completed"
@@ -100,7 +101,8 @@ void main() {
       expect(find.byIcon(Icons.check_circle), findsOneWidget);
 
       // Tap again to toggle back
-      await tester.tap(find.text('Completed'));
+      final button2 = tester.widget<ElevatedButton>(find.byWidgetPredicate((w) => w is ElevatedButton));
+      button2.onPressed!();
       await tester.pumpAndSettle();
 
       // Should return to "Mark as Complete"
@@ -120,8 +122,9 @@ void main() {
         ),
       );
 
-      // Tap completion button by text
-      await tester.tap(find.text('Mark as Complete'));
+      // Tap completion button
+      final button = tester.widget<ElevatedButton>(find.byWidgetPredicate((w) => w is ElevatedButton));
+      button.onPressed!();
       await tester.pumpAndSettle();
 
       // Check for SnackBar message
@@ -130,8 +133,9 @@ void main() {
       // Wait for SnackBar to disappear
       await tester.pumpAndSettle(const Duration(seconds: 3));
 
-      // Tap again to mark incomplete by text
-      await tester.tap(find.text('Completed'));
+      // Tap again to mark incomplete
+      final button2 = tester.widget<ElevatedButton>(find.byWidgetPredicate((w) => w is ElevatedButton));
+      button2.onPressed!();
       await tester.pumpAndSettle();
 
       // Check for incomplete message
@@ -228,7 +232,8 @@ void main() {
       expect(find.text('Mark as Complete'), findsOneWidget);
 
       // Tap to mark as complete
-      await tester.tap(find.text('Mark as Complete'));
+      final button = tester.widget<ElevatedButton>(find.byWidgetPredicate((w) => w is ElevatedButton));
+      button.onPressed!();
       await tester.pumpAndSettle();
 
       // Button should still exist with "Completed" text

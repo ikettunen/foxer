@@ -20,6 +20,11 @@ void main() {
       expect(find.text('Flight Control'), findsOneWidget);
       expect(find.text('Landing Procedures'), findsOneWidget);
       expect(find.text('Weather Analysis'), findsOneWidget);
+      await tester.scrollUntilVisible(
+        find.text('Thermal Flying'),
+        500.0,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text('Thermal Flying'), findsOneWidget);
     });
 
@@ -32,7 +37,14 @@ void main() {
 
       expect(find.text('30 min • Beginner'), findsOneWidget);
       expect(find.text('45 min • Beginner'), findsOneWidget);
-      expect(find.text('60 min • Intermediate'), findsWidgets);
+      expect(find.textContaining('60 min • Intermediate'), findsWidgets);
+      
+      // Scroll to the last item
+      await tester.scrollUntilVisible(
+        find.text('120 min • Advanced'),
+        500.0,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text('120 min • Advanced'), findsOneWidget);
     });
 
@@ -84,7 +96,7 @@ void main() {
       await tester.scrollUntilVisible(
         find.text('8'),
         500.0,
-        scrollable: find.byType(ListView).first,
+        scrollable: find.byType(Scrollable).first,
       );
       expect(find.text('8'), findsOneWidget);
     });
@@ -144,7 +156,7 @@ void main() {
       await tester.scrollUntilVisible(
         find.text('Thermal Flying'),
         500.0,
-        scrollable: find.byType(ListView).first,
+        scrollable: find.byType(Scrollable).first,
       );
       expect(find.text('Thermal Flying'), findsOneWidget);
     });
