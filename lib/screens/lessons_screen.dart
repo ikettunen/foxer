@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'lesson_detail_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
   const LessonsScreen({super.key});
@@ -40,8 +41,17 @@ class LessonsScreen extends StatelessWidget {
               subtitle: Text('${lesson['duration']} • ${lesson['level']}'),
               trailing: const Icon(Icons.play_circle_outline),
               onTap: () {
-                // Navigate to lesson detail
-              },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LessonDetailScreen(
+                      title: lesson['title']!,
+                      duration: lesson['duration']!,
+                      level: lesson['level']!,
+                      index: index,
+                    ),
+                  ),
+                );
             ),
           );
         },
