@@ -19,6 +19,7 @@ void main() {
       await tester.pumpWidget(const ParaglidingApp());
       
       // Wait for splash screen to complete (2s delay + navigation)
+      // ignore: avoid_print
       print('⏳ Waiting for splash screen...');
       await tester.pumpAndSettle(const Duration(seconds: 3));
       
@@ -30,10 +31,12 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 2));
       
       // 📸 Login Screen
+      // ignore: avoid_print
       print('📸 Taking login screen screenshot...');
       await takeScreenshot(tester, '02_login_screen');
       
       // Find email field and enter email
+      // ignore: avoid_print
       print('📝 Entering email...');
       final emailFields = find.byType(TextFormField);
       expect(emailFields, findsWidgets);
@@ -42,6 +45,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Find password field and enter password
+      // ignore: avoid_print
       print('📝 Entering password...');
       await tester.enterText(emailFields.at(1), 'password123');
       await tester.pumpAndSettle();
@@ -50,11 +54,13 @@ void main() {
       await takeScreenshot(tester, '03_login_form_filled');
 
       // Tap login button
+      // ignore: avoid_print
       print('🔐 Tapping login button...');
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle(const Duration(seconds: 2));
 
       // Verify navigation to home screen
+      // ignore: avoid_print
       print('✅ Verifying login success...');
       expectText('Flight Sites');
       
@@ -74,14 +80,17 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 3));
 
       // Verify on home screen
+      // ignore: avoid_print
       print('✅ Logged in automatically');
       
       // 📸 Home - Flight Sites Tab
+      // ignore: avoid_print
       print('📍 Testing Flight Sites tab...');
       await takeScreenshot(tester, '05_nav_flight_sites');
       expect(find.byIcon(Icons.map), findsOneWidget);
 
       // Tap Lessons tab
+      // ignore: avoid_print
       print('📍 Navigating to Lessons tab...');
       await tester.tap(find.byIcon(Icons.school));
       await tester.pumpAndSettle();
@@ -91,6 +100,7 @@ void main() {
       await takeScreenshot(tester, '06_nav_lessons');
 
       // Tap Reading Materials tab
+      // ignore: avoid_print
       print('📍 Navigating to Reading Materials tab...');
       await tester.tap(find.byIcon(Icons.book));
       await tester.pumpAndSettle();
@@ -100,6 +110,7 @@ void main() {
       await takeScreenshot(tester, '07_nav_reading_materials');
 
       // Tap Discussions tab
+      // ignore: avoid_print
       print('📍 Navigating to Discussions tab...');
       await tester.tap(find.byIcon(Icons.forum));
       await tester.pumpAndSettle();
@@ -109,6 +120,7 @@ void main() {
       await takeScreenshot(tester, '08_nav_discussions');
 
       // Tap back to Flight Sites
+      // ignore: avoid_print
       print('📍 Navigating back to Flight Sites...');
       await tester.tap(find.byIcon(Icons.map));
       await tester.pumpAndSettle();
@@ -117,6 +129,7 @@ void main() {
       // 📸 Back to Flight Sites
       await takeScreenshot(tester, '09_nav_back_to_flight_sites');
       
+      // ignore: avoid_print
       print('✅ All navigation tests passed!');
     });
 
@@ -132,6 +145,7 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 3));
 
       // Verify on home screen without entering credentials
+      // ignore: avoid_print
       print('✅ Login persisted correctly');
       expectText('Flight Sites');
       
