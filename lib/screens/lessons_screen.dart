@@ -20,10 +20,10 @@ class LessonsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: [
-            const Icon(Icons.paragliding, size: 32, color: Colors.white),
-            const SizedBox(width: 12),
-            const Text('Lessons'),
+          children: const [
+            Icon(Icons.paragliding, size: 32, color: Colors.white),
+            SizedBox(width: 12),
+            Text('Lessons'),
           ],
         ),
       ),
@@ -52,6 +52,7 @@ class LessonsScreen extends StatelessWidget {
                     ),
                   ),
                 );
+              },
             ),
           );
         },
