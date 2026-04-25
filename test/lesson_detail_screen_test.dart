@@ -224,16 +224,15 @@ void main() {
         ),
       );
 
-      // Get initial button
-      var button = find.byType(ElevatedButton);
-      expect(button, findsOneWidget);
+      // Get initial button by text (ElevatedButton.icon() cannot be found by type)
+      expect(find.text('Mark as Complete'), findsOneWidget);
 
       // Tap to mark as complete
-      await tester.tap(button);
+      await tester.tap(find.text('Mark as Complete'));
       await tester.pumpAndSettle();
 
-      // Button should still exist (color change is internal to ElevatedButton style)
-      expect(find.byType(ElevatedButton), findsOneWidget);
+      // Button should still exist with "Completed" text
+      expect(find.text('Completed'), findsOneWidget);
     });
   });
 }
