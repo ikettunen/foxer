@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_test/integration_test.dart';
-import 'dart:io';
-import 'dart:typed_data';
 
 /// Helper functions for integration testing
 
@@ -54,16 +51,12 @@ Future<void> takeScreenshot(WidgetTester tester, String name) async {
     
     // For web/Chrome integration tests, we can't save actual images due to security restrictions.
     // Instead, create a verification report showing widgets are rendered.
+    // ignore: avoid_print
     print('✅ Visual checkpoint verified: $name');
+    // ignore: avoid_print
     print('   - Scaffold found and rendered');
-    
-    // Log the widget tree depth for debugging
-    int depth = 0;
-    visitWidgets() {
-      depth++;
-    }
-    
   } catch (e) {
+    // ignore: avoid_print
     print('⚠️ Screenshot checkpoint failed for $name: $e');
     rethrow;
   }
