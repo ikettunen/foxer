@@ -27,7 +27,9 @@ jobs:
       run: flutter analyze --no-fatal-infos
 
     - name: Run widget tests
-      run: flutter test test/ 
+      run: |
+        mkdir -p build/reports
+        flutter test test/ --machine > build/reports/test-results.json
       timeout-minutes: 15
 
     - name: Run integration tests (local only)
@@ -55,7 +57,7 @@ jobs:
       uses: dorny/test-reporter@v1
       with:
         name: Widget Test Report
-        path: 'build/'
+        path: 'build/reports/test-results.json'
         reporter: 'dart-json'
         fail-on-error: false
 
