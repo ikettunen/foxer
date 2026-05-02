@@ -42,7 +42,7 @@ class ParaglidingApp extends StatelessWidget {
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey[600],
         ),
-        cardTheme: CardThemeData(
+        cardTheme: CardTheme(
           color: Colors.white,
           elevation: 2,
           shape: RoundedRectangleBorder(

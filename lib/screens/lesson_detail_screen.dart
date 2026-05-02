@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paragliding_training/generated_localizations/app_localizations.dart';
 
 class LessonDetailScreen extends StatefulWidget {
   final String title;
@@ -115,7 +116,7 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Level: ${widget.level}',
+                              '${AppLocalizations.of(context)!.level}: ${widget.level}',
                               style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
@@ -123,7 +124,7 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              'Duration: ${widget.duration}',
+                              '${AppLocalizations.of(context)!.duration}: ${widget.duration}',
                               style: TextStyle(
                                 fontSize: 14,
                                 color: Colors.grey[600],
@@ -193,15 +194,15 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
                   SnackBar(
                     content: Text(
                       _isCompleted
-                          ? 'Lesson marked as complete!'
-                          : 'Lesson marked as incomplete.',
+                          ? AppLocalizations.of(context)!.lesson_marked_complete
+                          : AppLocalizations.of(context)!.lesson_marked_incomplete,
                     ),
                     duration: const Duration(seconds: 2),
                   ),
                 );
               },
               icon: Icon(_isCompleted ? Icons.check_circle : Icons.play_circle_outline),
-              label: Text(_isCompleted ? 'Completed' : 'Mark as Complete'),
+              label: Text(_isCompleted ? AppLocalizations.of(context)!.completed : AppLocalizations.of(context)!.mark_as_complete),
             ),
           ),
         ],

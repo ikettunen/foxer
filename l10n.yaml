@@ -4,3 +4,4 @@ output-localization-file: app_localizations.dart
 output-class: AppLocalizations
 output-dir: lib/generated_localizations
 preferred-supported-locales: ["en", "fi"]
+synthetic-package: false

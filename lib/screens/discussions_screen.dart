@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paragliding_training/generated_localizations/app_localizations.dart';
 
 class DiscussionsScreen extends StatelessWidget {
   const DiscussionsScreen({super.key});
@@ -19,7 +20,7 @@ class DiscussionsScreen extends StatelessWidget {
           children: [
             const Icon(Icons.paragliding, size: 32, color: Colors.white),
             const SizedBox(width: 12),
-            const Text('Discussions'),
+            Text(AppLocalizations.of(context)!.discussions),
           ],
         ),
         actions: [

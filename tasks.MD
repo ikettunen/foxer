@@ -4,10 +4,10 @@
 - Extend the Flutter app. ✓ DONE 
 - Implement an actual course lesson page/screen. ✓ DONE 
 - Write tests. ✓ DONE 
-- **NEW TASK**: Add Finnish localization (fi). The user needs screenshots of the app in Finnish.
-  - Set up `flutter_localizations` in `pubspec.yaml`.
-  - Translate the main UI strings (Login, Home, Lessons, Reading, Discussions) to Finnish.
-  - Ensure we can run the app in Finnish to capture the screenshots.
+- **NEW TASK**: Add Finnish localization (fi). ✓ DONE
+  - Set up `flutter_localizations` in `pubspec.yaml`. ✓
+  - Translate the main UI strings (Login, Home, Lessons, Reading, Discussions) to Finnish. ✓
+  - Ensure we can run the app in Finnish to capture the screenshots. ✓
 
 ## @claudex
 - Gather the latest app screenshots.
