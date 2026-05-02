@@ -1,0 +1,18 @@
+## Facebook PP1 Ad — Image Concept
+
+### Generation Prompt
+"A paraglider launching from a Finnish hillside on a sunny summer day, wide open sky, lush green landscape, dramatic aerial perspective, photorealistic, professional outdoor sports photography, warm golden hour light"
+
+### Notes
+- Aspect ratio: 16:9 (Facebook feed/ad optimized)
+- Quality: high
+- Style: photorealistic, warm golden hour, outdoor sports photography
+- Mood: aspirational, adventurous, welcoming — Finnish summer vibes
+
+### Generation Attempt
+- Date: 2026-05-02
+- Status: FAILED — image generation providers unavailable (billing/permission errors)
+- Retry when providers are restored (openai/gpt-image-2 or google/gemini-3.1-flash-image-preview)
+
+### Alternative
+Use a real photo from Jekki Kettu's own shoots at Kellokoski, or source from Unsplash/Pexels with Finnish hillside paragliding keywords.
