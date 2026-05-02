@@ -22,5 +22,54 @@
   "intermediate": "Intermediate",
   "advanced": "Advanced",
   "lesson_marked_complete": "Lesson marked as complete!",
-  "lesson_marked_incomplete": "Lesson marked as incomplete."
+  "lesson_marked_incomplete": "Lesson marked as incomplete.",
+  "courses": "Courses",
+  "selectCourse": "Select Course",
+  "selectDay": "Select Day",
+  "dayLabel": "Day {day}",
+  "@dayLabel": {
+    "placeholders": {
+      "day": { "type": "int" }
+    }
+  },
+  "locked": "Locked",
+  "unlocked": "Unlocked",
+  "preReading": "Pre-Reading",
+  "startQuiz": "Start Quiz",
+  "keyPoints": "Key Points",
+  "quiz": "Quiz",
+  "question": "Question {current} of {total}",
+  "@question": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "correct": "Correct!",
+  "incorrect": "Incorrect",
+  "explanation": "Explanation",
+  "next": "Next",
+  "quizComplete": "Quiz Complete!",
+  "yourScore": "Your score: {score}/{total}",
+  "@yourScore": {
+    "placeholders": {
+      "score": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "passed": "Passed ✓",
+  "failed": "Try again",
+  "backToCourses": "Back to Courses",
+  "days": "{count} days",
+  "@days": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "estimatedRead": "{min} min read",
+  "@estimatedRead": {
+    "placeholders": {
+      "min": { "type": "int" }
+    }
+  }
 }

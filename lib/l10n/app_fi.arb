@@ -22,5 +22,54 @@
   "intermediate": "Keskitaso",
   "advanced": "Edistynyt",
   "lesson_marked_complete": "Oppitunti merkitty valmiiksi!",
-  "lesson_marked_incomplete": "Oppitunti merkitty keskeneräiseksi."
+  "lesson_marked_incomplete": "Oppitunti merkitty keskeneräiseksi.",
+  "courses": "Kurssit",
+  "selectCourse": "Valitse kurssi",
+  "selectDay": "Valitse päivä",
+  "dayLabel": "Päivä {day}",
+  "@dayLabel": {
+    "placeholders": {
+      "day": { "type": "int" }
+    }
+  },
+  "locked": "Lukittu",
+  "unlocked": "Auki",
+  "preReading": "Ennakkolukeminen",
+  "startQuiz": "Aloita testi",
+  "keyPoints": "Avainpisteet",
+  "quiz": "Testi",
+  "question": "Kysymys {current}/{total}",
+  "@question": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "correct": "Oikein!",
+  "incorrect": "Väärin",
+  "explanation": "Selitys",
+  "next": "Seuraava",
+  "quizComplete": "Testi valmis!",
+  "yourScore": "Pisteesi: {score}/{total}",
+  "@yourScore": {
+    "placeholders": {
+      "score": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "passed": "Hyväksytty ✓",
+  "failed": "Yritä uudelleen",
+  "backToCourses": "Takaisin kursseille",
+  "days": "{count} päivää",
+  "@days": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "estimatedRead": "{min} min lukeminen",
+  "@estimatedRead": {
+    "placeholders": {
+      "min": { "type": "int" }
+    }
+  }
 }

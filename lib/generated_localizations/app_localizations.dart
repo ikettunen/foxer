@@ -230,6 +230,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lesson marked as incomplete.'**
   String get lesson_marked_incomplete;
+
+  /// No description provided for @courses.
+  ///
+  /// In en, this message translates to:
+  /// **'Courses'**
+  String get courses;
+
+  /// No description provided for @selectCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Course'**
+  String get selectCourse;
+
+  /// No description provided for @selectDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Day'**
+  String get selectDay;
+
+  /// No description provided for @dayLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {day}'**
+  String dayLabel(int day);
+
+  /// No description provided for @locked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get locked;
+
+  /// No description provided for @unlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked'**
+  String get unlocked;
+
+  /// No description provided for @preReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Pre-Reading'**
+  String get preReading;
+
+  /// No description provided for @startQuiz.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Quiz'**
+  String get startQuiz;
+
+  /// No description provided for @keyPoints.
+  ///
+  /// In en, this message translates to:
+  /// **'Key Points'**
+  String get keyPoints;
+
+  /// No description provided for @quiz.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz'**
+  String get quiz;
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} of {total}'**
+  String question(int current, int total);
+
+  /// No description provided for @correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct!'**
+  String get correct;
+
+  /// No description provided for @incorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect'**
+  String get incorrect;
+
+  /// No description provided for @explanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get explanation;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @quizComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Complete!'**
+  String get quizComplete;
+
+  /// No description provided for @yourScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Your score: {score}/{total}'**
+  String yourScore(int score, int total);
+
+  /// No description provided for @passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Passed ✓'**
+  String get passed;
+
+  /// No description provided for @failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get failed;
+
+  /// No description provided for @backToCourses.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Courses'**
+  String get backToCourses;
+
+  /// No description provided for @days.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} days'**
+  String days(int count);
+
+  /// No description provided for @estimatedRead.
+  ///
+  /// In en, this message translates to:
+  /// **'{min} min read'**
+  String estimatedRead(int min);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

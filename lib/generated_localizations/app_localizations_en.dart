@@ -72,4 +72,80 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lesson_marked_incomplete => 'Lesson marked as incomplete.';
+
+  @override
+  String get courses => 'Courses';
+
+  @override
+  String get selectCourse => 'Select Course';
+
+  @override
+  String get selectDay => 'Select Day';
+
+  @override
+  String dayLabel(int day) {
+    return 'Day $day';
+  }
+
+  @override
+  String get locked => 'Locked';
+
+  @override
+  String get unlocked => 'Unlocked';
+
+  @override
+  String get preReading => 'Pre-Reading';
+
+  @override
+  String get startQuiz => 'Start Quiz';
+
+  @override
+  String get keyPoints => 'Key Points';
+
+  @override
+  String get quiz => 'Quiz';
+
+  @override
+  String question(int current, int total) {
+    return 'Question $current of $total';
+  }
+
+  @override
+  String get correct => 'Correct!';
+
+  @override
+  String get incorrect => 'Incorrect';
+
+  @override
+  String get explanation => 'Explanation';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get quizComplete => 'Quiz Complete!';
+
+  @override
+  String yourScore(int score, int total) {
+    return 'Your score: $score/$total';
+  }
+
+  @override
+  String get passed => 'Passed ✓';
+
+  @override
+  String get failed => 'Try again';
+
+  @override
+  String get backToCourses => 'Back to Courses';
+
+  @override
+  String days(int count) {
+    return '$count days';
+  }
+
+  @override
+  String estimatedRead(int min) {
+    return '$min min read';
+  }
 }

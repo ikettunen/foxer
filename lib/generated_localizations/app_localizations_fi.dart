@@ -72,4 +72,80 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get lesson_marked_incomplete => 'Oppitunti merkitty keskeneräiseksi.';
+
+  @override
+  String get courses => 'Kurssit';
+
+  @override
+  String get selectCourse => 'Valitse kurssi';
+
+  @override
+  String get selectDay => 'Valitse päivä';
+
+  @override
+  String dayLabel(int day) {
+    return 'Päivä $day';
+  }
+
+  @override
+  String get locked => 'Lukittu';
+
+  @override
+  String get unlocked => 'Auki';
+
+  @override
+  String get preReading => 'Ennakkolukeminen';
+
+  @override
+  String get startQuiz => 'Aloita testi';
+
+  @override
+  String get keyPoints => 'Avainpisteet';
+
+  @override
+  String get quiz => 'Testi';
+
+  @override
+  String question(int current, int total) {
+    return 'Kysymys $current/$total';
+  }
+
+  @override
+  String get correct => 'Oikein!';
+
+  @override
+  String get incorrect => 'Väärin';
+
+  @override
+  String get explanation => 'Selitys';
+
+  @override
+  String get next => 'Seuraava';
+
+  @override
+  String get quizComplete => 'Testi valmis!';
+
+  @override
+  String yourScore(int score, int total) {
+    return 'Pisteesi: $score/$total';
+  }
+
+  @override
+  String get passed => 'Hyväksytty ✓';
+
+  @override
+  String get failed => 'Yritä uudelleen';
+
+  @override
+  String get backToCourses => 'Takaisin kursseille';
+
+  @override
+  String days(int count) {
+    return '$count päivää';
+  }
+
+  @override
+  String estimatedRead(int min) {
+    return '$min min lukeminen';
+  }
 }
