@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FlightLogEntry",
+  "description": "A single logged flight by a student",
+  "type": "object",
+  "required": ["id", "type", "studentId", "courseId", "date", "site", "flightNumber"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string", "enum": ["flight_log"] },
+    "studentId": { "type": "string" },
+    "courseId": { "type": "string", "description": "e.g. pp1" },
+    "day": { "type": "integer", "minimum": 1 },
+    "flightNumber": { "type": "integer", "description": "Sequential flight number in course" },
+    "date": { "type": "string", "format": "date" },
+    "site": { "type": "string" },
+    "conditions": { "type": "string", "description": "Brief weather/wind notes" },
+    "durationSeconds": { "type": "integer" },
+    "isTandem": { "type": "boolean", "default": false },
+    "instructorNotes": { "type": "string" },
+    "instructorId": { "type": "string" },
+    "signedOffAt": { "type": "string", "format": "date-time" }
+  }
+}

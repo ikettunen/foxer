@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Checklist",
+  "description": "Pre-flight or pre-day inspection checklist",
+  "type": "object",
+  "required": ["id", "type", "title", "locale", "items"],
+  "properties": {
+    "id": { "type": "string", "description": "e.g. pp1-preflight-checklist" },
+    "type": { "type": "string", "enum": ["checklist"] },
+    "title": { "type": "string" },
+    "locale": { "type": "string", "enum": ["fi", "en"] },
+    "requireAllToComplete": { "type": "boolean", "default": true },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "safetyFlag": { "type": "boolean", "default": false },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

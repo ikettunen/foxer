@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LessonModule",
+  "description": "A pre-reading lesson module delivered in the Foxer app",
+  "type": "object",
+  "required": ["id", "type", "courseId", "day", "title", "estimatedReadMinutes", "locale", "sections"],
+  "properties": {
+    "id": { "type": "string", "description": "Unique module ID, e.g. pp1-day1-reading" },
+    "type": { "type": "string", "enum": ["lesson"] },
+    "courseId": { "type": "string", "description": "e.g. pp1" },
+    "day": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string" },
+    "estimatedReadMinutes": { "type": "integer" },
+    "locale": { "type": "string", "enum": ["fi", "en"] },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["heading", "body"],
+        "properties": {
+          "heading": { "type": "string" },
+          "body": { "type": "string", "description": "Markdown-formatted text" },
+          "safetyFlag": { "type": "boolean", "default": false }
+        }
+      }
+    },
+    "keyPoints": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

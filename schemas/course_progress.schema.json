@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CourseProgress",
+  "description": "A student's progress through a course",
+  "type": "object",
+  "required": ["id", "type", "studentId", "courseId", "days"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string", "enum": ["course_progress"] },
+    "studentId": { "type": "string" },
+    "courseId": { "type": "string" },
+    "enrolledAt": { "type": "string", "format": "date-time" },
+    "completedAt": { "type": "string", "format": "date-time" },
+    "licenceGrantedAt": { "type": "string", "format": "date-time" },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["day", "lessonRead", "quizPassed", "practicalSignedOff"],
+        "properties": {
+          "day": { "type": "integer" },
+          "lessonRead": { "type": "boolean", "default": false },
+          "lessonReadAt": { "type": "string", "format": "date-time" },
+          "quizPassed": { "type": "boolean", "default": false },
+          "quizScore": { "type": "integer" },
+          "quizPassedAt": { "type": "string", "format": "date-time" },
+          "practicalSignedOff": { "type": "boolean", "default": false },
+          "practicalSignedOffAt": { "type": "string", "format": "date-time" },
+          "instructorId": { "type": "string" }
+        }
+      }
+    },
+    "totalFlights": { "type": "integer", "default": 0 },
+    "tandemFlights": { "type": "integer", "default": 0 }
+  }
+}
